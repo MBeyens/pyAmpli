@@ -1,6 +1,6 @@
-treference: /opt/NGS/References/hg19/samtools/0.1.19/hg19.fasta
+reference: PATH/TO/YOUR/hg19.fasta
 
-multi_cores: 16
+multi_cores: 4
 
 general_settings:
  min_amp: 2
