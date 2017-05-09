@@ -9,7 +9,7 @@ DESCRIPTION = 'Python package for amplicon filtering (germline and somatic)'
 AUTHOR = 'Matthias Beyens'
 AUTHOR_EMAIL = 'matthias.beyens@uantwerpen.be'
 URL = 'https://github.com/MBeyens/pyAmpli'
-VERSION = '0.8.0'
+VERSION = '0.1.0'
 LICENSE = 'GPL'
 
 
