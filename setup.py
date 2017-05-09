@@ -32,7 +32,7 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7'
     ],
-    scripts = ['bin/pyAmpli'],
+    scripts = ['bin/pyAmpli.py'],
     install_requires = ['pysam','pyvcf'
     ]
 
