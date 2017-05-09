@@ -14,7 +14,7 @@ If running setup.py without errors,
 the required dependencies should be installed correctly (dependencies.md).
 
 
-## Usage
+## Getting started
 
 ### Data preparation
 Index your human genome 19 reference
@@ -37,26 +37,59 @@ OPTIONAL
     change default parameters       # Optimal for somatic filtering
 ``` 
 
-### Somatic modus (default)
+
+### Filter modes
+``` 
+usage: pyAMPLI [-h] {germline,somatic} ...
+
+positional arguments:
+  {germline,somatic}  commands
+    germline          Input arguments for germline amplicon filter
+    somatic           Input arguments for somatic amplicon filter
+``` 
+
+#### Somatic modus (default)
 
 ``` 
-pyAmpli.py somatic 
-      -bn data/normal_sample_chr1.bam 
-      -bt data/tumor_sample_chr1.bam 
-      -v data/somatic_variants_chr1.vcf 
-      -d data/amplicon_design_chr1.bed 
-      -od data/
+usage: pyAMPLI somatic [-h] -bn BAM_NORMAL -bt BAM_TUMOR -v VCF -d DESIGN
+                       [-f FILENAME] [-od OUTDIR]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -bn BAM_NORMAL, --bam_normal BAM_NORMAL
+                        BAM file of the normal sample. Index located in the
+                        same directory
+  -bt BAM_TUMOR, --bam_tumor BAM_TUMOR
+                        BAM file of the tumor sample. Index located in the
+                        same directory
+  -v VCF, --vcf VCF     VCF file
+  -d DESIGN, --design DESIGN
+                        Probe/amplicon design file. Contains field, is this
+                        order: Contact your manufacturer for details
+  -f FILENAME, --filename FILENAME
+                        Output file name
+  -od OUTDIR, --outdir OUTDIR
+                        Output directory
 ```
 
 
-### Germline modus (adjust parameters in config file)
+#### Germline modus (adjust parameters in config file)
 
 ``` 
-pyAmpli.py germline 
-      -b data/normal_sample_chr1.bam 
-      -v data/somatic_variants_chr1.vcf 
-      -d data/amplicon_design_chr1.bed 
-      -od data/
+usage: pyAMPLI germline [-h] -b BAM -v VCF -d DESIGN [-f FILENAME]
+                        [-od OUTDIR]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -b BAM, --bam BAM     BAM file. Index located in the same directory
+  -v VCF, --vcf VCF     VCF file
+  -d DESIGN, --design DESIGN
+                        Probe/amplicon design file. Contains field, is this
+                        order: Contact your manufacturer for details
+  -f FILENAME, --filename FILENAME
+                        Output file name
+  -od OUTDIR, --outdir OUTDIR
+                        Output directory
 ```
 
 
