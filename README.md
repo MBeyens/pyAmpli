@@ -3,9 +3,12 @@ Read application note for pyAmpli rationale: <I>doi: </I>
 
 
 ## Installation
-Download pyAmpli from github ``` git clone https://github.com/MBeyens/pyAmpli```.
 
-Install it ```python setup.py```
+```
+git clone https://github.com/MBeyens/pyAmpli
+cd pyAmpli
+python setup.py install (--user)
+```
 
 Check dependencies at the dependencies folder
 

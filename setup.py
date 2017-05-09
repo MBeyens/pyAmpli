@@ -3,7 +3,7 @@
 import os
 from distutils.core import setup
 
-PACKAGES = ['logging', 'bin', 'pysam', 'pyVCF']
+PACKAGES = ['bin']
 NAME = 'pyAmpli'
 DESCRIPTION = 'Python package for amplicon filtering (germline and somatic)'
 AUTHOR = 'Matthias Beyens'
@@ -31,5 +31,9 @@ setup(
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7'
+    ],
+    scripts = ['bin/pyAmpli'],
+    install_requires = ['pysam','pyvcf'
     ]
+
 )
