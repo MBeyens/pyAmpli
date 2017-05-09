@@ -1,0 +1,19 @@
+treference: /opt/NGS/References/hg19/samtools/0.1.19/hg19.fasta
+
+multi_cores: 16
+
+general_settings:
+ min_amp: 2
+ min_frac: 1
+ fuzziness: 0
+ min_read_pos: 2
+ min_depth: 100
+ mq: 17
+ bq: 17
+ nr_amplicon: 2
+
+germline_settings:
+ test: 100
+
+somatic_settings:
+ test_test: 20
