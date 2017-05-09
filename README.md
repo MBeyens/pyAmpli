@@ -7,7 +7,7 @@ Read application note for pyAmpli rationale: <I>doi: </I>
 ```
 git clone https://github.com/MBeyens/pyAmpli
 cd pyAmpli
-python setup.py install (--user)
+python setup.py install 
 ```
 
 Check dependencies at the dependencies folder
