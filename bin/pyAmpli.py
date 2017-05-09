@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-### ./amplicon_filter_v2.py somatic -bn ../data/erb_run4_uza11_2_bc_rw_s28.real.recal.bam -bt ../data/erb_run4_uza11_b1774256_pt_s62.real.recal.bam -v ../data/ERB_RUN4_UZA11_B1774256_PT.varscan2.pair.snp.vcf -d ../data/nele_amplicons.bed -od ../data/
-
 ###
 # Load python dependencies
 import os, time

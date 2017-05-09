@@ -16,8 +16,24 @@ python setup.py install
 If running setup.py without errors, 
 the required dependencies should be installed correctly (dependencies.md).
 
+## Getting started on example data
+```
+mkdir example_data
+```
+Download example data set from 
+https://www.dropbox.com/sh/lzd0kvjgc3gn7y3/AABsWwCKqgd1tqF1Ok9gzxrYa?dl=0
+ 
+Run pyAmpli as follows
+```
+pyAmpli.py somatic 
+-bn example_data/normal_sample_chr1.bam 
+-bt example_data/tumor_sample_chr1.bam 
+-v example_data/somatic_variants_chr1.vcf 
+-d example_data/amplicon_design_chr1.bed 
+-od example_data/
+```
 
-## Getting started
+## Getting started on your own data
 
 ### Data preparation
 Index your human genome 19 reference
