@@ -11,7 +11,7 @@ Normally these dependencies are installed automatically when running setup.py
      
 ## System
 #### samtools v1 or later
-     apt-get samtools
+     apt-get install samtools
      
 #### pigz
-     apt-get pigz
+     apt-get install pigz

@@ -3,7 +3,7 @@
 import os
 from setuptools import setup
 
-PACKAGES = ['bin']
+PACKAGES = ['pyampli']
 NAME = 'pyAmpli'
 DESCRIPTION = 'Python package for amplicon filtering (germline and somatic)'
 AUTHOR = 'Matthias Beyens'
@@ -11,7 +11,7 @@ AUTHOR_EMAIL = 'matthias.beyens@uantwerpen.be'
 URL = 'https://github.com/MBeyens/pyAmpli'
 VERSION = '0.1.0'
 LICENSE = 'GPL'
-
+DATAFILES=[('pyampli',['pyampli/config.yaml'])]
 
 def read(*paths):
     """ read files """
@@ -25,6 +25,7 @@ setup(
     url=URL,
     license=LICENSE,
     author=AUTHOR,
+    data_files=DATAFILES,
     author_email=AUTHOR_EMAIL,
     description=DESCRIPTION,
     long_description=(read("README.md")),
@@ -32,8 +33,8 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7'
     ],
-    scripts = ['bin/pyAmpli.py'],
-    install_requires = ['pysam','pyvcf'
+    scripts = ['pyampli/pyAmpli.py'],
+    install_requires = ['pysam','pyvcf','pyyaml'
     ]
 
 )
