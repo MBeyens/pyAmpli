@@ -23,7 +23,7 @@ mkdir example_data
 ```
 Download example data 
 ```
-https://www.dropbox.com/sh/lzd0kvjgc3gn7y3/AABsWwCKqgd1tqF1Ok9gzxrYa?dl=0
+https://tinyurl.com/m6u7qr9
 ```
 Run pyAmpli as follows
 ```
