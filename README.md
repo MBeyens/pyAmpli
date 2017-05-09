@@ -17,12 +17,14 @@ If running setup.py without errors,
 the required dependencies should be installed correctly (dependencies.md).
 
 ## Getting started on example data
+Create exampe directory 
 ```
 mkdir example_data
 ```
-Download example data set from 
+Download example data 
+```
 https://www.dropbox.com/sh/lzd0kvjgc3gn7y3/AABsWwCKqgd1tqF1Ok9gzxrYa?dl=0
- 
+```
 Run pyAmpli as follows
 ```
 pyAmpli.py somatic 
