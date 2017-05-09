@@ -10,9 +10,9 @@ cd pyAmpli
 python setup.py install 
 ```
 
-Check dependencies at the dependencies folder
+If running setup.py without errors, 
+the required dependencies should be installed correctly (dependencies.md).
 
-Done.
 
 ## Usage
 
