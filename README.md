@@ -3,7 +3,7 @@ Read application note for pyAmpli rationale: <I>doi: </I>
 
 
 ## Installation
-Download pyAmpli from github ``` git clone https://github.com/MBeyens/pyAMPLI```.
+Download pyAmpli from github ``` git clone https://github.com/MBeyens/pyAmpli```.
 
 Install it ```python setup.py```
 
