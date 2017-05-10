@@ -21,3 +21,4 @@ Normally these dependencies are installed automatically when running setup.py
      
 #### pigz (v2.3.4) (http://zlib.net/pigz)
      apt-get install pigz
+     
