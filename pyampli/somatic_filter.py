@@ -69,23 +69,3 @@ def add_variant_info_fields(number_after_amplicons_all, new_variant_info_field, 
     variant.add_info('AmpC_t', number_after_amplicons_all['total_amps']['bam_tumor'])
 
     return variant
-
-
-
-
-
-    #if 'AD' in variant.FORMAT and len(variant.alleles) == 2:
-     #   offset[var_type]['ref'].append(abs(refs - variant.samples[1]['RD']))
-      #  dp[var_type]['ref'].append(variant.samples[1]['RD'])
-       # offset[var_type]['alt'].append(abs(variant.samples[1]['AD']))
-        #dp[var_type]['alt'].append(variant.samples[1]['AD'])
-        # add to variant record.
-  #      AmpF_O_R = refs - variant.samples[1]['RD']
-   #     AmpF_O_A = alts - variant.samples[1]['AD']
-    #    variant.add_info('AmpF_OR', AmpF_O_R)
-     #   variant.add_info('AmpF_OA', AmpF_O_A)
-
-#        if variant.INFO['AmpF_OA'] < -5:
- #           nr_offset += 1
-  #          if 'STR' in variant.INFO:
-   #             nr_str_offset += 1
