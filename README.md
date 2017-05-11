@@ -21,18 +21,20 @@ Create exampe directory
 ```
 mkdir example_data
 ```
-Download example data 
+Download example data and copy it in example_data
 ```
 https://tinyurl.com/m6u7qr9
 ```
 Run pyAmpli as follows
 ```
-pyAmpli.py somatic 
--bn example_data/normal_sample_chr1.bam 
--bt example_data/tumor_sample_chr1.bam 
--v example_data/somatic_variants_chr1.vcf 
--d example_data/amplicon_design_chr1.bed 
--od example_data/
+cd example_data
+ 
+pyAmpli.py somatic \
+-bn normal_sample_chr1.bam \
+-bt tumor_sample_chr1.bam \
+-v somatic_variants_chr1.vcf \
+-d amplicon_design_chr1.bed \
+-od example_data_output/
 ```
 
 ## Getting started on your own data
