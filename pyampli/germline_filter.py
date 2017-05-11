@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-import logging
 
 def filter_variants_germline(config_parameters, number_after_amplicons_all, new_variant_info_field, variant, nr_amplicons_design):
     if number_after_amplicons_all['alt_amps']['bam_normal'] < int(config_parameters['general_settings']['min_amp']) and new_variant_info_field['ampF_A']['bam_normal'] < float(config_parameters['general_settings']['min_frac']):

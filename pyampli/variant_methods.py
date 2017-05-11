@@ -2,6 +2,7 @@
 
 import pysam
 
+
 def get_pad_alleles(alleles):
     padded_alleles = [[0 for x in range(2)] for x in range(len(alleles) - 1)]
     for i in range(1, len(alleles)):

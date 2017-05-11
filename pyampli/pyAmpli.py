@@ -2,7 +2,7 @@
 
 ###
 # Load python dependencies
-import os, time,sys
+import os, time
 ###
 # Load script dependencies
 from pyampli import log_system, args, config, check_input_files, get_design, make_vcf, process_bam, variant_filter

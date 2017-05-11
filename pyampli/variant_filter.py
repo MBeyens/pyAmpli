@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import os, sys, logging, multiprocessing, subprocess
+import os, logging, multiprocessing, subprocess
 from pyampli import variant_methods, process_bam, germline_filter, somatic_filter, make_vcf, progress
 
 

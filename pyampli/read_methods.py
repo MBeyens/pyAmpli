@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-import logging
-
 
 def check_quality_read(read, position, mapping_quality, base_quality):
     try:

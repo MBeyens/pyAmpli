@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import logging, argparse ,os
+import logging, argparse, os
 
 
 def argument_checkup():
@@ -39,10 +39,10 @@ def argument_checkup():
                                help='Output directory',
                                default='filter')
     germline_args.add_argument('-c',
-                              '--config',
-                              type=str,
-                              help='Config file (.yaml)',
-                              default = os.path.dirname(os.path.realpath(__file__)) + '/config.yaml')
+                               '--config',
+                               type=str,
+                               help='Config file (.yaml)',
+                               default=os.path.dirname(os.path.realpath(__file__)) + '/config.yaml')
 
     somatic_args = subparsers.add_parser('somatic',
                                          help='Input arguments for somatic amplicon filter')
@@ -77,10 +77,10 @@ def argument_checkup():
                               help='Output directory',
                               default=None)
     somatic_args.add_argument('-c',
-			      '--config',
-			      type=str,
-			      help='Config file (.yaml)',
-			      default = os.path.dirname(os.path.realpath(__file__)) + '/config.yaml')
+                              '--config',
+                              type=str,
+                              help='Config file (.yaml)',
+                              default=os.path.dirname(os.path.realpath(__file__)) + '/config.yaml')
 
     input_arguments = parser.parse_args()
     logging.debug('Input_parameters: %s', input_arguments)

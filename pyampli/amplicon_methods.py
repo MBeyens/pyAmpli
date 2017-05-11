@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-import os, sys, logging
 
 def Get_Exact_Amplicon(read):
     # print read.reference_name , ":" , read.reference_start, "-",read.reference_end

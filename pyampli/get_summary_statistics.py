@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-import os, sys, logging
 
 # Count total amount for progression
 cmd1 = 'egrep -v "^#" %s | wc -l' % (vcf_path)

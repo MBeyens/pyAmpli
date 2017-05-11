@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-import logging
-
 
 def filter_variants_somatic(config_parameters, number_after_amplicons_all, new_variant_info_field, variant,
                             nr_amplicons_design, reads_all, pass_var_position_read_list):
