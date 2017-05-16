@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import pysam
+import re
 
 
 def get_pad_alleles(alleles):
