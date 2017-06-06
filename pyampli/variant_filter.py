@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import os, logging, multiprocessing, subprocess
+import os, sys, logging, multiprocessing, subprocess
 from pyampli import variant_methods, process_bam, germline_filter, somatic_filter, make_vcf, progress
 
 
@@ -131,7 +131,6 @@ def extract_variant(variant, filter_modus, input_arguments, config_parameters, d
                                                          variant, nr_amplicons_design,
                                                          reads_all,
                                                          pass_var_position_read_list)
-        print 'this is a variant :: ', variant
         variant = somatic_filter.add_variant_info_fields(number_after_amplicons_all,
                                                          new_variant_info_field, variant)
 
@@ -146,7 +145,15 @@ def extract_variant(variant, filter_modus, input_arguments, config_parameters, d
 def merge_tmp_vcfs(input_arguments, variant_number):
     tmp_results_dir_vcfs = os.path.abspath(input_arguments['outdir']) + '/tmp/*.vcf'
     tmp_results_dir = os.path.abspath(input_arguments['outdir']) + '/tmp/'
-    cmd_tmp_vcfs = 'grep -v '"'#'"' --no-filename ' + tmp_results_dir_vcfs + ' | sort -k1,1V -k2,2n >> ' + \
+    os_platform = sys.platform.lower()
+    # linux
+    if os_platform == 'linux' or os_platform == 'linux2':
+        cmd_tmp_vcfs = 'grep -v '"'#'"' --no-filename ' + tmp_results_dir_vcfs + ' | sort -k1,1V -k2,2n >> ' + \
+                       input_arguments['filter_vcf'] + ' && rm -Rf ' + tmp_results_dir
+    # OS X
+    elif os_platform == 'darwin':
+        cmd_tmp_vcfs = 'grep -v '"'#'"' --no-filename ' + tmp_results_dir_vcfs + ' | sort -k1,1 -k2,2n >> ' + \
                    input_arguments['filter_vcf'] + ' && rm -Rf ' + tmp_results_dir
+    logging.debug('Your operating system seems to be %s', os_platform)
     os.system(cmd_tmp_vcfs)
     logging.info('Merged %s temporary vcf files to one vcf (%s)', variant_number, input_arguments['filter_vcf'])
