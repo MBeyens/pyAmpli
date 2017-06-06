@@ -111,7 +111,7 @@ def extract_variant(variant, filter_modus, input_arguments, config_parameters, d
             else:
                 new_variant_info_field['ampF_R'][bam_file_type] = new_variant_info_field['ampF_A'][bam_file_type] = 0
 
-	    number_after_amplicons_all['total_amps'][bam_file_type] = nr_amps_seen
+            number_after_amplicons_all['total_amps'][bam_file_type] = nr_amps_seen
 
     if filter_modus == 'germline':
         variant = germline_filter.filter_variants_germline(config_parameters,
