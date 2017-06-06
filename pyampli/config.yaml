@@ -7,13 +7,13 @@ general_settings:
  min_frac: 1
  fuzziness: 0
  min_read_pos: 2
- min_depth: 100
  mq: 17
  bq: 17
  nr_amplicon: 2
 
 germline_settings:
- test: 100
+ min_depth_normal: 100
 
 somatic_settings:
- test_test: 20
+ min_depth_normal: 100
+ min_depth_tumor: 100
