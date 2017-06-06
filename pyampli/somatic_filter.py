@@ -21,7 +21,7 @@ def filter_variants_somatic(config_parameters, number_after_amplicons_all, new_v
 
     elif variant.samples[0]['DP'] < int(config_parameters['somatic_settings']['min_depth_normal']) and variant.samples[1]['DP'] < int(config_parameters['somatic_settings']['min_depth_tumor']):
         variant.add_filter('DepthFailNormalTumor')
-        
+
     elif variant.INFO['SS'] == '2' and total_count_ratio >= 10 and variant.samples[0]['DP'] >= int(config_parameters['somatic_settings']['min_depth_normal']):
         variant.add_filter('NormalFail')
 

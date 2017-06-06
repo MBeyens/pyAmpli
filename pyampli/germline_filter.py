@@ -8,7 +8,7 @@ def filter_variants_germline(config_parameters, number_after_amplicons_all, new_
         total_read_pos_ratio = 100
     print total_read_pos_ratio
 
-    if variant.samples[0]['DP'] < 100:
+    if variant.samples[0]['DP'] < int(config_parameters['germline_settings']['min_depth_normal']):
         variant.add_filter('DepthFail')
 
     elif total_read_pos_ratio <= 10:
