@@ -7,6 +7,7 @@ general_settings:
  min_frac: 1
  fuzziness: 0
  min_read_pos: 2
+ min_read_pos_fraction: 10
  mq: 17
  bq: 17
  nr_amplicon: 2
