@@ -131,7 +131,7 @@ def extract_variant(variant, filter_modus, input_arguments, config_parameters, d
                                                          variant, nr_amplicons_design,
                                                          reads_all,
                                                          pass_var_position_read_list)
-        print 'this is a variant :: ' variant
+        print 'this is a variant :: ', variant
         variant = somatic_filter.add_variant_info_fields(number_after_amplicons_all,
                                                          new_variant_info_field, variant)
 
