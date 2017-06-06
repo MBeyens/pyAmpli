@@ -25,10 +25,10 @@ def filter_variants_somatic(config_parameters, number_after_amplicons_all, new_v
     elif variant.INFO['SS'] == '2' and total_count_ratio >= 10 and variant.samples[0]['DP'] >= int(config_parameters['somatic_settings']['min_depth_normal']):
         variant.add_filter('NormalFail')
 
-    elif variant.INFO['SS'] == '2' and total_read_pos_ratio <= int(config_parameters['general_settings'][' min_read_pos_fraction']):
+    elif variant.INFO['SS'] == '2' and total_read_pos_ratio <= int(config_parameters['general_settings']['min_read_pos_fraction']):
         variant.add_filter('PositionFail')
 
-    elif variant.INFO['SS'] == '3' and total_read_pos_ratio <= int(config_parameters['general_settings'][' min_read_pos_fraction']):
+    elif variant.INFO['SS'] == '3' and total_read_pos_ratio <= int(config_parameters['general_settings']['min_read_pos_fraction']):
         variant.add_filter('PositionFail')
 
     elif nr_amplicons_design < 2:

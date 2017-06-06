@@ -11,7 +11,7 @@ def filter_variants_germline(config_parameters, number_after_amplicons_all, new_
     if variant.samples[0]['DP'] < int(config_parameters['germline_settings']['min_depth_normal']):
         variant.add_filter('DepthFail')
 
-    elif total_read_pos_ratio <= int(config_parameters['general_settings'][' min_read_pos_fraction']):
+    elif total_read_pos_ratio <= int(config_parameters['general_settings']['min_read_pos_fraction']):
         variant.add_filter('PositionFail')
 
     elif nr_amplicons_design < 2:
