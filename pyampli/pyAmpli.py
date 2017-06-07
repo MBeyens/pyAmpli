@@ -2,7 +2,7 @@
 
 ###
 # Load python dependencies
-import os, time
+import os, sys, time
 ###
 # Load script dependencies
 from pyampli import log_system, args, config, check_input_files, get_design, make_vcf, process_bam, variant_filter
@@ -56,51 +56,56 @@ def main():
 
     ###
     # Check input argument: exist and decompress
-    input_arguments = check_input_files.checker(input_arguments, filter_modus)
+    input_arguments, file_not_found = check_input_files.checker(input_arguments, filter_modus, config_parameters['reference'])
 
-    ###
-    # Load design file
-    design_by_start, design_by_end = get_design.load_design_file(input_arguments['bed'])
+    if not file_not_found:
+        ###
+        # Load design file
+        design_by_start, design_by_end = get_design.load_design_file(input_arguments['bed'])
 
-    ###
-    # Check design conflicts
-    # TO DO
-    # fuzziness = 0
-    # get_design.check_design_conflicts(config_parameters['general_settings']['fuzziness'], design_by_start)
+        ###
+        # Check design conflicts
+        # TO DO
+        # fuzziness = 0
+        # get_design.check_design_conflicts(config_parameters['general_settings']['fuzziness'], design_by_start)
 
-    ###
-    # Create new vcf template
-    input_arguments = make_vcf.create_vcf(filter_modus, input_arguments['filename'],
-                                          input_arguments['outdir'], input_arguments['vcf'],
-                                          input_arguments)
+        ###
+        # Create new vcf template
+        input_arguments = make_vcf.create_vcf(filter_modus, input_arguments['filename'],
+                                              input_arguments['outdir'], input_arguments['vcf'],
+                                              input_arguments)
 
-    ###
-    # Get sequencing lengths from BAM(s)
-    seq_lengths = process_bam.bam_loader(input_arguments)
+        ###
+        # Get sequencing lengths from BAM(s)
+        seq_lengths = process_bam.bam_loader(input_arguments)
 
-    ###
-    # Open unfiltered vcf file
-    unfiltered_vcf_file = make_vcf.open_unfiltered_vcf(input_arguments['vcf'])
+        ###
+        # Open unfiltered vcf file
+        unfiltered_vcf_file = make_vcf.open_unfiltered_vcf(input_arguments['vcf'])
 
-    ###
-    # Filter unfiltered vcf file
-    variant_number = variant_filter.multi_processing_variants(filter_modus, input_arguments, config_parameters,
-                                                              unfiltered_vcf_file, design_by_start, design_by_end,
-                                                              seq_lengths)
+        ###
+        # Filter unfiltered vcf file
+        variant_number = variant_filter.multi_processing_variants(filter_modus, input_arguments, config_parameters,
+                                                                  unfiltered_vcf_file, design_by_start, design_by_end,
+                                                                  seq_lengths)
 
-    ###
-    # Merge multiprocessed files
-    variant_filter.merge_tmp_vcfs(input_arguments, variant_number)
+        ###
+        # Merge multiprocessed files
+        variant_filter.merge_tmp_vcfs(input_arguments, variant_number)
 
-    ###
-    # Summary statistics
-    # get_summary_statistics
+        ###
+        # Summary statistics
+        # get_summary_statistics
 
-    ###
-    # End analysis
-    logging.info('pyAMPLI finshed!')
-    t1 = time.time()
-    print ("Total time running: %s seconds" % (str(t1-t0)))
+        ###
+        # End analysis
+        logging.info('pyAMPLI finshed!')
+        t1 = time.time()
+        print ("Total time running: %s seconds" % (str(t1-t0)))
+
+    else:
+        logging.info(file_not_found)
+        logging.info('Fix file location or file name, and restart pyAmpli!')
 
 
 if __name__ == "__main__":
