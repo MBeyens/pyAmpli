@@ -24,27 +24,27 @@ def filter_variants_germline(config_parameters, number_after_amplicons_all, new_
         variant.add_filter('LowAmpFail')
 
     else:
-        if number_after_amplicons_all['total_amps']['bam_normal'] <= 2:
-            if number_after_amplicons_all['ref_amps']['bam_normal'] == 2 and number_after_amplicons_all['alt_amps'][
-                'bam_normal'] == 1 and number_after_amplicons_all['total_amps']['bam_normal'] >= 1:
+        if number_after_amplicons_all['total_amps']['bam_normal'] <= config_parameters['general_settings']['min_amp']:
+            if number_after_amplicons_all['ref_amps']['bam_normal'] == config_parameters['general_settings']['min_amp'] and number_after_amplicons_all['alt_amps'][
+                'bam_normal'] == config_parameters['general_settings']['min_amp']-1 and number_after_amplicons_all['total_amps']['bam_normal'] >= config_parameters['general_settings']['min_amp']-1:
                 variant.add_filter('MatchAmpPass')
 
-            elif number_after_amplicons_all['ref_amps']['bam_normal'] == 1 and number_after_amplicons_all['alt_amps'][
-                'bam_normal'] == 2 and number_after_amplicons_all['total_amps']['bam_normal'] >= 1:
+            elif number_after_amplicons_all['ref_amps']['bam_normal'] == config_parameters['general_settings']['min_amp']-1 and number_after_amplicons_all['alt_amps'][
+                'bam_normal'] == config_parameters['general_settings']['min_amp'] and number_after_amplicons_all['total_amps']['bam_normal'] >= config_parameters['general_settings']['min_amp']-1:
                 variant.add_filter('MatchAmpPass')
 
-            elif number_after_amplicons_all['ref_amps']['bam_normal'] == 1 and number_after_amplicons_all['alt_amps'][
-                'bam_normal'] == 1 and number_after_amplicons_all['total_amps']['bam_normal'] == 1:
+            elif number_after_amplicons_all['ref_amps']['bam_normal'] == config_parameters['general_settings']['min_amp']-1 and number_after_amplicons_all['alt_amps'][
+                'bam_normal'] == config_parameters['general_settings']['min_amp']-1 and number_after_amplicons_all['total_amps']['bam_normal'] == config_parameters['general_settings']['min_amp']-1:
                 variant.add_filter('MatchAmpPass')
 
-            elif number_after_amplicons_all['ref_amps']['bam_normal'] == 2 and number_after_amplicons_all['alt_amps'][
-                'bam_normal'] == 2 and number_after_amplicons_all['total_amps']['bam_normal'] == 2:
+            elif number_after_amplicons_all['ref_amps']['bam_normal'] == config_parameters['general_settings']['min_amp'] and number_after_amplicons_all['alt_amps'][
+                'bam_normal'] == config_parameters['general_settings']['min_amp'] and number_after_amplicons_all['total_amps']['bam_normal'] == config_parameters['general_settings']['min_amp']:
                 variant.add_filter('MatchAmpPass')
 
             else:
                 variant.add_filter('LowAmpFail')
 
-        elif number_after_amplicons_all['total_amps']['bam_normal'] > 2:
+        elif number_after_amplicons_all['total_amps']['bam_normal'] > config_parameters['general_settings']['min_amp']:
             variant.add_filter('AmpPass')
 
         else:

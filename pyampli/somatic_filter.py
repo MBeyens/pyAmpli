@@ -35,26 +35,26 @@ def filter_variants_somatic(config_parameters, number_after_amplicons_all, new_v
         variant.add_filter('OneAmpPass')
 
     else:
-        if number_after_amplicons_all['total_amps']['bam_tumor'] <= 2:
-            if number_after_amplicons_all['ref_amps']['bam_tumor'] == 2 and number_after_amplicons_all['alt_amps']['bam_tumor'] == 1 and number_after_amplicons_all['total_amps']['bam_tumor'] >= 1:
+        if number_after_amplicons_all['total_amps']['bam_tumor'] <= config_parameters['general_settings']['min_amp']:
+            if number_after_amplicons_all['ref_amps']['bam_tumor'] == config_parameters['general_settings']['min_amp'] and number_after_amplicons_all['alt_amps']['bam_tumor'] == config_parameters['general_settings']['min_amp']-1 and number_after_amplicons_all['total_amps']['bam_tumor'] >= config_parameters['general_settings']['min_amp']-1:
                 variant.add_filter('MatchAmpPass')
 
-            elif number_after_amplicons_all['ref_amps']['bam_tumor'] == 1 and number_after_amplicons_all['alt_amps']['bam_tumor'] == 2 and number_after_amplicons_all['total_amps']['bam_tumor'] >= 1:
+            elif number_after_amplicons_all['ref_amps']['bam_tumor'] == config_parameters['general_settings']['min_amp']-1 and number_after_amplicons_all['alt_amps']['bam_tumor'] == config_parameters['general_settings']['min_amp'] and number_after_amplicons_all['total_amps']['bam_tumor'] >= config_parameters['general_settings']['min_amp']-1:
                 variant.add_filter('MatchAmpPass')
 
-            elif number_after_amplicons_all['ref_amps']['bam_tumor'] == 1 and number_after_amplicons_all['alt_amps']['bam_tumor'] == 1 and number_after_amplicons_all['total_amps']['bam_tumor'] == 1:
+            elif number_after_amplicons_all['ref_amps']['bam_tumor'] == config_parameters['general_settings']['min_amp']-1 and number_after_amplicons_all['alt_amps']['bam_tumor'] == config_parameters['general_settings']['min_amp']-1 and number_after_amplicons_all['total_amps']['bam_tumor'] == config_parameters['general_settings']['min_amp']-1:
                 variant.add_filter('MatchAmpPass')
 
-            elif number_after_amplicons_all['ref_amps']['bam_tumor'] == 2 and number_after_amplicons_all['alt_amps']['bam_tumor'] == 2 and number_after_amplicons_all['total_amps']['bam_tumor'] == 2:
+            elif number_after_amplicons_all['ref_amps']['bam_tumor'] == config_parameters['general_settings']['min_amp'] and number_after_amplicons_all['alt_amps']['bam_tumor'] == config_parameters['general_settings']['min_amp'] and number_after_amplicons_all['total_amps']['bam_tumor'] == config_parameters['general_settings']['min_amp']:
                 variant.add_filter('MatchAmpPass')
 
             else:
                 variant.add_filter('LowAmpFail')
 
-        elif variant.INFO['SS'] == '3' or variant.INFO['SS'] == '1' and number_after_amplicons_all['total_amps']['bam_tumor'] > 2:
+        elif variant.INFO['SS'] == '3' or variant.INFO['SS'] == '1' and number_after_amplicons_all['total_amps']['bam_tumor'] > config_parameters['general_settings']['min_amp']:
             variant.add_filter('AmpPass')
 
-        elif variant.INFO['SS'] == '2' or variant.INFO['SS'] == '5' and number_after_amplicons_all['alt_amps']['bam_tumor'] > 2:
+        elif variant.INFO['SS'] == '2' or variant.INFO['SS'] == '5' and number_after_amplicons_all['alt_amps']['bam_tumor'] > config_parameters['general_settings']['min_amp']:
             variant.add_filter('AmpPass')
 
         else:
