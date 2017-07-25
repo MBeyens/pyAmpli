@@ -2,7 +2,7 @@
 Cite and read our application note on pyAmpli
 ```
 Matthias Beyens, Nele Boeckx, Guy Van Camp, Ken Op de Beeck and Geert Vandeweyer. 
-pyAmpli: an amplicon-based variant filter pipeline for targeted enriched sequencing data (2017), doi: 
+pyAmpli: an amplicon-based variant filter pipeline for targeted enriched resequencing data (2017), doi: 
 ```
 
 ## Installation
