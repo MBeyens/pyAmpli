@@ -16,7 +16,7 @@ python setup.py install
 If running setup.py without errors, 
 the required dependencies should be installed correctly (dependencies.md).
 
-##### Fully functional on Ubuntu 14.04.4 LTS platform with Python v2.7.6
+#### Fully functional on Ubuntu 14.04.4 LTS platform with Python v2.7.6
 
 ## Getting started on example data
 Create exampe directory 
