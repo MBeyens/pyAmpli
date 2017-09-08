@@ -28,14 +28,9 @@ Create example directory
 ```
 mkdir example_data
 ```
-Download example data and copy it in example_data. Afterwards, index the BAM files.
+Download example data and copy it in example_data. You do not need to provide any BAM index files, pyAmpli will do the indexing via pysam.
 ```
 https://tinyurl.com/m6u7qr9
- 
-samtools index normal_sample_chr1.bam
- 
-samtools index tumor_sample_chr1.bam
- 
 ```
 ### Note 1
 Be sure you have specified the absolute path of the hg19 genome (and indexed) in the configuration file (config.yaml) before running the example. You can download the full hg19 genome from http://hgdownload.cse.ucsc.edu/goldenPath/hg19/

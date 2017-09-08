@@ -2,17 +2,40 @@
 
 import logging, os, sys, subprocess, pysam
 
+def fasta_index_file(genome_file):
+    logging.info('Indexing BAM file (%s)', genome_file)
+    pysam.index(bam_file)
+    logging.info('Indexing done of BAM file done (%s)', genome_file)
+
+
+def time_fasta_bai(genome_file):
+    try:
+        check_bai = os.stat(genome_file + '.bai')
+        if os.stat(genome_file).st_mtime >= os.stat(genome_file + '.bai').st_mtime:
+            logging.warning('Fasta index timestamp is older than fasta. Please re-index your fasta file (%s)', genome_file)
+            logging.warning('pyAmpli will re-index your fasta file now (%s). Please wait...',
+                            genome_file)
+            bam_index_file(genome_file)
+    except OSError:
+        logging.warning('No index of fasta file found. pyAmpli will re-index your fasta file now (%s). Please wait...',
+                        genome_file)
+        bam_index_file(genome_file)
+
+
 
 def check_extension(file_type, infile):
     decomp_file_name = False
     if file_type is 'genome':
         if infile.endswith(str('fasta')):
             logging.debug('File extension as expected %s %s', file_type, infile)
+            time_fasta_bai(infile)
         elif infile.endswith(str('fa')):
             logging.debug('File extension as expected %s %s', file_type, infile)
+            time_fasta_bai(infile)
         elif infile.endswith('.gz'):
             decomp_file_name = decompress_file(infile)
             logging.info('Decompressed file %s', decomp_file_name)
+            time_fasta_bai(infile)
         else:
             logging.error('File extension of your reference genome is not correct or file compression is not supported (%s), should be .fa, .fasta', infile)
             logging.error('Please fix latter error first, before restarting pyAmpli!')
