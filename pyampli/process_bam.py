@@ -7,7 +7,7 @@ from pyampli import read_methods, variant_methods
 def bam_index_file(bam_file):
     logging.info('Indexing BAM file (%s)', bam_file)
     pysam.index(bam_file)
-    logging.info('Indexing done of BAM file done (%s)', bam_file)
+    logging.info('Indexing of BAM file done (%s)', bam_file)
 
 
 def time_bam_bai(bam_file):
@@ -19,7 +19,7 @@ def time_bam_bai(bam_file):
                             bam_file)
             bam_index_file(bam_file)
     except OSError:
-        logging.warning('No index of BAM file found. pyAmpli will re-index your BAM file now (%s). Please wait...',
+        logging.warning('No index of BAM file found. pyAmpli will index your BAM file now (%s). Please wait...',
                         bam_file)
         bam_index_file(bam_file)
 
