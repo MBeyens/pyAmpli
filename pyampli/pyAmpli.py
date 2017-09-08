@@ -12,7 +12,7 @@ def main():
     t0 = time.time()
     ###
     # Initiate logging systems
-    debug_mode = 1
+    debug_mode = 0
     logging = log_system.initiate_log(debug_mode)
     logging.debug('Log initiated')
 
