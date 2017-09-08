@@ -19,8 +19,7 @@ def main():
     ###
     # Argument parsing
     input_arguments = args.argument_checkup()
-    print input_arguments.config
-    
+
     ###
     # Load config
     config_parameters = config.config_load(input_arguments.config)
