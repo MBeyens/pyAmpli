@@ -4,14 +4,14 @@ import logging, os, sys, subprocess, pysam
 
 def fasta_index_file(genome_file):
     logging.info('Indexing reference fasta file (%s)', genome_file)
-    pysam.index(bam_file)
+    pysam.faidx(bam_file)
     logging.info('Indexing done of reference fasta file done (%s)', genome_file)
 
 
 def time_fasta_bai(genome_file):
     try:
-        check_bai = os.stat(genome_file + '.bai')
-        if os.stat(genome_file).st_mtime >= os.stat(genome_file + '.bai').st_mtime:
+        check_bai = os.stat(genome_file + '.fai')
+        if os.stat(genome_file).st_mtime >= os.stat(genome_file + '.fai').st_mtime:
             logging.warning('Reference fasta index timestamp is older than fasta. Please re-index your reference fasta file (%s)', genome_file)
             logging.warning('pyAmpli will re-index your reference fasta file now (%s). Please wait...',
                             genome_file)
