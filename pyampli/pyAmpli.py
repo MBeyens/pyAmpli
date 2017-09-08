@@ -105,7 +105,7 @@ def main():
 
     else:
         logging.error(file_not_found)
-        logging.error('Please fix file location or file name, and before restarting pyAmpli')
+        logging.error('Please fix file location or file name, before restarting pyAmpli')
 
 
 if __name__ == "__main__":
