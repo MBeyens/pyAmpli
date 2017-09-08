@@ -58,7 +58,7 @@ pyAmpli.py somatic \
 
 ### Data preparation
 
-Adjust config file (bin/config.yaml)
+Adjust configuration file (bin/config.yaml)
 ``` 
 REQUIRED
     reference:  hg19.fasta          # /ABSOLUTE/PATH/TO/YOUR/REFERENCE.FILE.FASTA
