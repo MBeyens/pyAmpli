@@ -5,7 +5,7 @@ import os, sys, logging, yaml
 
 def config_load(config_filename):
 
-    if os.path.isfile(infile):
+    if os.path.isfile(os.path.realpath(config_filename)):
         config_filename = os.path.realpath(config_filename)
         try:
             with open(config_filename, 'r') as yml_file:
