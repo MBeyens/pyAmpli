@@ -43,7 +43,7 @@ def main():
             os.makedirs(tmp_results_dir)
     logging.info('Results directory created : %s', results_dir)
 
-    ###
+    ####
     # Check filter modus
     try:
         input_arguments.bam_tumor
