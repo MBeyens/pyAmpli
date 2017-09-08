@@ -1,9 +1,10 @@
 #!/usr/bin/python
 
-import logging, os
+import logging, os, sys
 
 
 def initiate_log(debug_modes):
+    os_version_check()
     if not debug_modes:
         logging.basicConfig(filename=os.getcwd() + '/log.txt',
                             filemode='w',
@@ -21,3 +22,20 @@ def initiate_log(debug_modes):
     logging.getLogger().addHandler(stderrLogger)
 
     return logging
+
+
+def os_version_check():
+    os_check = 1
+    os_platform = sys.platform.lower()
+    # linux
+    if os_platform == 'linux' or os_platform == 'linux2':
+        os_check = 0
+    # OS X
+    elif os_platform == 'darwin':
+        os_check = 0
+
+    if not os_check:
+        logging.error('Your operating system is not supported! Please contact matthias.beyens@uantwerpen.be')
+        sys.exit(0)
+    else:
+        logging.info('Your operating system is supported (%s)', os_platform)

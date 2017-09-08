@@ -154,6 +154,11 @@ def merge_tmp_vcfs(input_arguments, variant_number):
     elif os_platform == 'darwin':
         cmd_tmp_vcfs = 'grep -v '"'#'"' --no-filename ' + tmp_results_dir_vcfs + ' | sort -k1,1 -k2,2n >> ' + \
                    input_arguments['filter_vcf'] + ' && rm -Rf ' + tmp_results_dir
+    else:
+        logging.error('Cannot merge temporary vcf files')
+        logging.error('Your operating system is not supported! Please contact matthias.beyens@uantwerpen.be')
+        sys.exit(0)
+
     logging.debug('Your operating system seems to be %s', os_platform)
     os.system(cmd_tmp_vcfs)
     logging.info('Merged %s temporary vcf files to one vcf (%s)', variant_number, input_arguments['filter_vcf'])
