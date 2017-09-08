@@ -11,7 +11,9 @@ pyAmpli: an amplicon-based variant filter pipeline for targeted enriched reseque
 ```
 git clone https://github.com/MBeyens/pyAmpli
 cd pyAmpli
-python setup.py install 
+python setup.py install
+# if permission problems: python setup.py install --user
+
 ```
 
 If running setup.py without errors, 
