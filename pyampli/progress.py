@@ -7,7 +7,6 @@ def update_progress(variant_number, amount_total_variants):
     progress = (float(variant_number) / float(amount_total_variants))
     barLength = 100  # Modify this to change the length of the progress bar
     status = "- running ({0}/{1})- ".format(variant_number, amount_total_variants)
-    status = rolling_ball()
     if isinstance(progress, int):
         progress = float(progress)
     if progress < 0:
