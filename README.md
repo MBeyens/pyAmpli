@@ -15,12 +15,12 @@ python setup.py install
 ```
 
 If running setup.py without errors, 
-the required dependencies should be installed correctly (dependencies.md).
+the required dependencies should be installed correctly (if not check dependencies.md for manual installation).
 
 
 
 ## Getting started on example data
-Create exampe directory 
+Create example directory 
 ```
 mkdir example_data
 ```
@@ -28,7 +28,13 @@ Download example data and copy it in example_data
 ```
 https://tinyurl.com/m6u7qr9
 ```
-Run pyAmpli as follows
+#####Note 1
+Be sure you have specified the absolute path of the hg19 genome (and indexed) in the config file before running the example. You can download the full hg19 genome from http://hgdownload.cse.ucsc.edu/goldenPath/hg19/
+#####Note 2
+If not using the full hg19 genome sequence, please download the hg19_chr1.fa.gz from the example data repository. Unzip and 'samtools faidx hg19_chr1.fa' to index the fasta file. This hg19 genome contains only chr1 sequences! Be sure to specify the absolute path in the config file.
+
+
+Run pyAmpli example as follows
 ```
 cd example_data
  
