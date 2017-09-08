@@ -4,7 +4,6 @@ import logging, os, sys
 
 
 def initiate_log(debug_modes):
-    os_version_check()
     if not debug_modes:
         logging.basicConfig(filename=os.getcwd() + '/log.txt',
                             filemode='w',
@@ -21,6 +20,8 @@ def initiate_log(debug_modes):
     stderrLogger.setFormatter(logging.Formatter('%(asctime)s \t-\t %(name)s \t-\t %(levelname)s \t-\t %(message)s'))
     logging.getLogger().addHandler(stderrLogger)
 
+    os_version_check()
+
     return logging
 
 
@@ -34,7 +35,7 @@ def os_version_check():
     elif os_platform == 'darwin':
         os_check = 0
 
-    if not os_check:
+    if os_check:
         logging.error('Your operating system is not supported! Please contact matthias.beyens@uantwerpen.be')
         sys.exit(0)
     else:
