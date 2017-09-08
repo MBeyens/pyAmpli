@@ -13,13 +13,9 @@ def update_progress(variant_number, amount_total_variants):
         progress = 0
         status = "Halt...\r\n"
     elif progress >= 1:
-        #time.sleep(1)
-        #sys.stdout.write("\033[F")  # back to previous line
-        #time.sleep(1)
-        #sys.stdout.write("\033[K")  # clear line
-        #sys.stdout.write("\033[K")  # clear line
 
         time.sleep(3)
+        block = int(round(barLength * 1))
         text = "\r\>>> Status : [{0}] {1}% {2} <<<".format("#" * block + "-" * (barLength - block),
                                                                                round((1 * 100), 2), "finished")
         sys.stdout.write(text)
