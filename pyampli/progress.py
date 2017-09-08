@@ -13,16 +13,16 @@ def update_progress(variant_number, amount_total_variants):
         progress = 0
         status = "Halt...\r\n"
     elif progress >= 1:
-        time.sleep(1)
-        sys.stdout.write("\033[F")  # back to previous line
-        time.sleep(1)
-        sys.stdout.write("\033[K")  # clear line
-        sys.stdout.write("\033[K")  # clear line
+        #time.sleep(1)
+        #sys.stdout.write("\033[F")  # back to previous line
+        #time.sleep(1)
+        #sys.stdout.write("\033[K")  # clear line
+        #sys.stdout.write("\033[K")  # clear line
 
         time.sleep(3)
         sys.stdout.flush()
-        logging.info('\r')
-        logging.info('VCF processing done')
+        #logging.info('\r')
+        logging.info('\rVCF processing done')
     else:
         block = int(round(barLength * progress))
         text = "\r\t\t>>> Status : [{0}] {1}% {2} <<<".format("#" * block + "-" * (barLength - block),
