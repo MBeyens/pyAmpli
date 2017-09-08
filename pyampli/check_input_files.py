@@ -8,14 +8,14 @@ def check_extension(file_type, infile):
     if file_type is 'genome':
         if infile.endswith(str('fasta')):
             logging.debug('File extension as expected %s %s', file_type, infile)
-        elif infile.endswith(str('fasta')):
+        elif infile.endswith(str('fa')):
             logging.debug('File extension as expected %s %s', file_type, infile)
         elif infile.endswith('.gz'):
             decomp_file_name = decompress_file(infile)
             logging.info('Decompressed file %s', decomp_file_name)
         else:
-            logging.error('File extension of your reference genome is not correct or file compression is not supported (%s) !! should be .fa, .fasta !!', infile)
-            logging.error('Please fix latter first, before restarting pyAmpli!')
+            logging.error('File extension of your reference genome is not correct or file compression is not supported (%s), should be .fa, .fasta', infile)
+            logging.error('Please fix latter error first, before restarting pyAmpli!')
             sys.exit(0)
     else:
         if infile.endswith(str(file_type)):
