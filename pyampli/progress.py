@@ -20,12 +20,14 @@ def update_progress(variant_number, amount_total_variants):
         #sys.stdout.write("\033[K")  # clear line
 
         time.sleep(3)
+        text = "\r\>>> Status : [{0}] {1}% {2} <<<".format("#" * block + "-" * (barLength - block),
+                                                                               round((1 * 100), 2), "finished")
+        sys.stdout.write(text)
         sys.stdout.flush()
-        #logging.info('\r')
-        logging.info('\rVCF processing done')
+        logging.info('VCF processing done')
     else:
         block = int(round(barLength * progress))
-        text = "\r\t\t>>> Status : [{0}] {1}% {2} <<<".format("#" * block + "-" * (barLength - block),
+        text = "\r\>>> Status : [{0}] {1}% {2} <<<".format("#" * block + "-" * (barLength - block),
                                                                                round((progress * 100), 2), status)
         sys.stdout.write(text)
         sys.stdout.flush()
