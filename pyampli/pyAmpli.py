@@ -104,8 +104,8 @@ def main():
         print ("Total time running: %s seconds" % (str(t1-t0)))
 
     else:
-        logging.info(file_not_found)
-        logging.info('Fix file location or file name, and restart pyAmpli!')
+        logging.error(file_not_found)
+        logging.error('Please fix file location or file name, and before restarting pyAmpli')
 
 
 if __name__ == "__main__":
