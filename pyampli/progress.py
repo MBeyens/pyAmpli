@@ -15,11 +15,12 @@ def update_progress(variant_number, amount_total_variants):
     elif progress >= 1:
         time.sleep(1)
         #sys.stdout.write("\033[F")  # back to previous line
-        time.sleep(1)
-        sys.stdout.write("\033[K")  # clear line
-        sys.stdout.write("\033[K")  # clear line
+        #time.sleep(1)
+        #sys.stdout.write("\033[K")  # clear line
+        #sys.stdout.write("\033[K")  # clear line
 
-        time.sleep(1)
+        #time.sleep(1)
+        #sys.stdout.flush()
         sys.stdout.flush()
         logging.info('VCF processing done')
     else:
