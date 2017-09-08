@@ -4,7 +4,13 @@ import os, sys, logging, pysam
 from pyampli import read_methods, variant_methods
 
 
+def bam_index_file(bam_file):
+    logging.info('Indexing BAM file (%s)', bam_file)
+    pysam.index(bam_file)
+
+
 def time_bam_bai(bam_file):
+    print "BAMMM ::", os.stat(bam_file + '.bai')
     if os.stat(bam_file).st_mtime >= os.stat(bam_file + '.bai').st_mtime:
         logging.error('BAI file timestamp is older than BAM. Please re-index your BAM file (%s)', bam_file)
         sys.exit(0)

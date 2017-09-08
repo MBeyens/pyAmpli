@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import logging, os, sys, subprocess
+import logging, os, sys, subprocess, pysam
 
 
 def check_extension(file_type, infile):
