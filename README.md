@@ -28,7 +28,7 @@ Create example directory
 ```
 mkdir example_data
 ```
-Download example data and copy it in example_data. You do not need to provide any BAM index files, pyAmpli will do the indexing via pysam.
+Download example data and copy it in example_data. You do not need to provide any BAM index files, pyAmpli will do the indexing for you!
 ```
 https://tinyurl.com/m6u7qr9
 ```
