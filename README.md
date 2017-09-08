@@ -19,29 +19,41 @@ python setup.py install
 If running setup.py without errors, 
 the required dependencies should be installed correctly (if not check dependencies.md for manual installation).
 
-
+```
+pyAmpli.py -h
+```
 
 ## Getting started on example data
 Create example directory 
 ```
 mkdir example_data
 ```
-Download example data and copy it in example_data
+Download example data and copy it in example_data. Afterwards, index the BAM files.
 ```
 https://tinyurl.com/m6u7qr9
+ 
+samtools index normal_sample_chr1.bam
+ 
+samtools index tumor_sample_chr1.bam
+ 
 ```
 ### Note 1
 Be sure you have specified the absolute path of the hg19 genome (and indexed) in the configuration file (config.yaml) before running the example. You can download the full hg19 genome from http://hgdownload.cse.ucsc.edu/goldenPath/hg19/
 
 ### Note 2
 If not using the full hg19 genome sequence, please download the hg19_chr1.fa.gz from the example data repository. Unzip and 'samtools faidx hg19_chr1.fa' to index the fasta file. This hg19 genome contains only chr1 sequences! Be sure to specify the absolute path in the configuration file (config.yaml).
-
+```
+gunzip hg19_chr1.fa.gz
+ 
+samtools faidx hg19_chr1.fa
+```
 
 Run pyAmpli example as follows
 ```
 cd example_data
- 
+  
 pyAmpli.py somatic \
+-c example_config.yaml \
 -bn normal_sample_chr1.bam \
 -bt tumor_sample_chr1.bam \
 -v somatic_variants_chr1.vcf \

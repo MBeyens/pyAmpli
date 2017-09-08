@@ -5,13 +5,24 @@ import logging, os, subprocess
 
 def check_extension(file_type, infile):
     decomp_file_name = False
-    if infile.endswith(str(file_type)):
-        logging.debug('File extension as expected %s %s', file_type, infile)
-    elif infile.endswith('.gz'):
-        decomp_file_name = decompress_file(infile)
-        logging.info('Decompressed file %s', decomp_file_name)
+    if file_type is 'genome':
+        if infile.endswith(str('fasta')):
+            logging.debug('File extension as expected %s %s', file_type, infile)
+        elif infile.endswith(str('fa')):
+            logging.debug('File extension as expected %s %s', file_type, infile)
+        elif infile.endswith('.gz'):
+            decomp_file_name = decompress_file(infile)
+            logging.info('Decompressed file %s', decomp_file_name)
+        else:
+            logging.error('File extension (%s) is not correct or file compression is not supported (%s)', file_type, infile)
     else:
-        logging.error('File extension (%s) is not correct or file compression is not supported (%s)', file_type, infile)
+        if infile.endswith(str(file_type)):
+            logging.debug('File extension as expected %s %s', file_type, infile)
+        elif infile.endswith('.gz'):
+            decomp_file_name = decompress_file(infile)
+            logging.info('Decompressed file %s', decomp_file_name)
+        else:
+            logging.error('File extension (%s) is not correct or file compression is not supported (%s)', file_type, infile)
     return decomp_file_name
 
 
