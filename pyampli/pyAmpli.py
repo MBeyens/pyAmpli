@@ -57,6 +57,7 @@ def main():
     ###
     # Check input argument: exist and decompress
     input_arguments, file_not_found = check_input_files.checker(input_arguments, filter_modus, config_parameters['reference'])
+    print "FILEEEE::", file_not_found
 
     if not file_not_found:
         ###

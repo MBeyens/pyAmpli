@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import logging, os, subprocess
+import logging, os, sys, subprocess
 
 
 def check_extension(file_type, infile):
@@ -15,6 +15,7 @@ def check_extension(file_type, infile):
             logging.info('Decompressed file %s', decomp_file_name)
         else:
             logging.error('File extension (%s) is not correct or file compression is not supported (%s)', file_type, infile)
+            sys.exit(0)
     else:
         if infile.endswith(str(file_type)):
             logging.debug('File extension as expected %s %s', file_type, infile)
@@ -23,6 +24,7 @@ def check_extension(file_type, infile):
             logging.info('Decompressed file %s', decomp_file_name)
         else:
             logging.error('File extension (%s) is not correct or file compression is not supported (%s)', file_type, infile)
+            sys.exit(0)
     return decomp_file_name
 
 
