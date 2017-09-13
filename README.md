@@ -5,6 +5,15 @@ Matthias Beyens, Nele Boeckx, Guy Van Camp, Ken Op de Beeck and Geert Vandeweyer
 pyAmpli: an amplicon-based variant filter pipeline for targeted enriched resequencing data (2017), doi: 
 ```
 
+## Content
+ 1) Installation
+ 2) Getting started on example data
+ 3) Getting started on your own data
+ 4) What it does?
+ 5) References
+
+  
+  
 ## Installation
 #### Fully functional on Ubuntu 14.04.4 LTS platform with Python v2.7.6
 
