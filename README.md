@@ -86,7 +86,7 @@ positional arguments:
     somatic           Input arguments for somatic amplicon filter
 ``` 
 
-#### Somatic modus (default)
+#### Somatic modus (default parameters can be found in configuration file)
 
 ``` 
 usage: pyAMPLI somatic [-h] -bn BAM_NORMAL -bt BAM_TUMOR -v VCF -d DESIGN
@@ -108,10 +108,12 @@ optional arguments:
                         Output file name
   -od OUTDIR, --outdir OUTDIR
                         Output directory
+  -c CONFIG, --config CONFIG
+                        Location of user-supplied configuration file
 ```
 
 
-#### Germline modus (adjust parameters in config file)
+#### Germline modus (adjust parameters in configuration file)
 
 ``` 
 usage: pyAMPLI germline [-h] -b BAM -v VCF -d DESIGN [-f FILENAME]
@@ -128,6 +130,8 @@ optional arguments:
                         Output file name
   -od OUTDIR, --outdir OUTDIR
                         Output directory
+   -c CONFIG, --config CONFIG
+                        Location of user-supplied configuration file
 ```
 
 
