@@ -21,14 +21,15 @@ the required dependencies should be installed correctly (if not check dependenci
 
 ```
 pyAmpli.py -h
-```
+````
 
 If this gives problems finding the binary (rare cases), please append the pyAmpli binary to your systems PATH by doing so
 
-``
+```
 export PATH=/ABSOLUTE/PATH/WHERE/YOU/COMPILED/PYAMPLI/pyampli:$PATH
 ```
 
+ 
 ## Getting started on example data
 Create example directory 
 ```
