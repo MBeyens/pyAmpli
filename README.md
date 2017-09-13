@@ -22,6 +22,7 @@ Questions or ideas? Feel free to contact me: ``matthias dot beyens at uantwerpen
 git clone https://github.com/MBeyens/pyAmpli
 cd pyAmpli
 python setup.py install
+ 
 # if permission issues: python setup.py install --user
 # or run with super user
 
