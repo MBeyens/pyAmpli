@@ -6,11 +6,11 @@ pyAmpli: an amplicon-based variant filter pipeline for targeted enriched reseque
 ```
 
 ## Content
- 1) Installation
- 2) Getting started on example data
- 3) Getting started on your own data
- 4) What it does?
- 5) References
+ 1) [Installation](https://github.com/MBeyens/pyAmpli#installation)
+ 2) [Getting started on example data](https://github.com/MBeyens/pyAmpli#getting-started-on-example-data)
+ 3) [Getting started on your own data](https://github.com/MBeyens/pyAmpli#getting-started-on-your-own-data)
+ 4) [What it does?](https://github.com/MBeyens/pyAmpli#what-it-does)
+ 5) [References](https://github.com/MBeyens/pyAmpli#references)
  
   
 ## Installation
