@@ -130,7 +130,7 @@ optional arguments:
                         Output file name
   -od OUTDIR, --outdir OUTDIR
                         Output directory
-   -c CONFIG, --config CONFIG
+  -c CONFIG, --config CONFIG
                         Location of user-supplied configuration file
 ```
 
