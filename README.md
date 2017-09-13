@@ -95,12 +95,12 @@ usage: pyAMPLI somatic [-h] -bn BAM_NORMAL -bt BAM_TUMOR -v VCF -d DESIGN
 optional arguments:
   -h, --help            show this help message and exit
   -bn BAM_NORMAL, --bam_normal BAM_NORMAL
-                        BAM file of the normal sample. Index located in the
+                        Binary alignment file, BAM file of the normal sample. Index located in the
                         same directory
   -bt BAM_TUMOR, --bam_tumor BAM_TUMOR
-                        BAM file of the tumor sample. Index located in the
+                        Binary alignment file, BAM file of the tumor sample. Index located in the
                         same directory
-  -v VCF, --vcf VCF     VCF file
+  -v VCF, --vcf VCF     Variant calling file, VCF file
   -d DESIGN, --design DESIGN
                         Probe/amplicon design file. Contains field, is this
                         order: Contact your manufacturer for details
@@ -121,8 +121,8 @@ usage: pyAMPLI germline [-h] -b BAM -v VCF -d DESIGN [-f FILENAME]
 
 optional arguments:
   -h, --help            show this help message and exit
-  -b BAM, --bam BAM     BAM file. Index located in the same directory
-  -v VCF, --vcf VCF     VCF file
+  -b BAM, --bam BAM     Binary alignment file, BAM file
+  -v VCF, --vcf VCF     variant calling file, VCF file
   -d DESIGN, --design DESIGN
                         Probe/amplicon design file. Contains field, is this
                         order: Contact your manufacturer for details
