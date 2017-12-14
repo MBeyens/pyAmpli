@@ -3,7 +3,7 @@ Cite and read our software note on BMC Bioinformatics
 ```
 Matthias Beyens, Nele Boeckx, Guy Van Camp, Ken Op de Beeck and Geert Vandeweyer. 
 pyAmpli: an amplicon-based variant filter pipeline for targeted enriched resequencing data (2017), 
-18:554, DOI:10.1186/s12859-017-1985-1, BMC Bioinformatics
+18:554, [DOI:10.1186/s12859-017-1985-1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1985-1), BMC Bioinformatics
 ```
  
 Questions or ideas? Feel free to contact me: ``matthias dot beyens at uantwerpen dot be``
