@@ -39,7 +39,7 @@ setup(
         'Programming Language :: Python :: 2.7'
     ],
     scripts = ['pyampli/pyAmpli.py'],
-    install_requires = ['pysam==0.8.4','pyvcf==0.6.8','pyyaml==3.11', 'setuptools == 20.2.2'
+    install_requires = ['pysam==0.8.4','pyvcf==0.6.8','pyyaml==3.11', 'setuptools == 65.5.1'
     ]
 
 )
